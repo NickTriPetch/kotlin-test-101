@@ -1,0 +1,13 @@
+application:
+  version: 0.0.1
+  build: 1
+spring:
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${KT_DB_HOST:localhost}:${KT_DB_PORT:3306}/${KT_DB_NAME:t2htest}?useUnicode=yes&characterEncoding=UTF-8
+    username: ${KT_DB_USER:_}
+    password: ${KT_DB_PASSWORD:_}
+  jpa:
+    hibernate:
+      ddl-auto: ${KT_DB_DDL_AUTO:none}
+    show-sql: true
