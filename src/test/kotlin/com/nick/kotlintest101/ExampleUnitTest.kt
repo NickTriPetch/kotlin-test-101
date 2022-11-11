@@ -3,7 +3,6 @@ package com.nick.kotlintest101
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 
-@UnitTest
 class ExampleUnitTest {
 
     @Test
