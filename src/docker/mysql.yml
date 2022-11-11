@@ -1,0 +1,13 @@
+version: "3.7"
+services:
+  db:
+    platform: linux/x86_64 # <-- Add this line
+    image: mysql:8.0
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: yes
+      MYSQL_DATABASE: t2htest
+    command: mysqld --lower_case_table_names=1 --skip-ssl --character_set_server=utf8mb4 --explicit_defaults_for_timestamp
+    volumes:
+      - ./tmp/mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
