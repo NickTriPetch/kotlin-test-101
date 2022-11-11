@@ -1,0 +1,13 @@
+{
+  "name": "kotlin-test-101",
+  "version": "1.0.0",
+  "description": "> Ref : https://mkyong.com/gradle/gradle-how-to-run-a-single-unit-test-class/",
+  "main": "index.js",
+  "scripts": {
+    "docker:db:down": "docker-compose -f src/main/docker/mysql.yml down -v",
+    "docker:db:up": "docker-compose -f src/main/docker/mysql.yml up -d"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
