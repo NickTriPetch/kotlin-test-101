@@ -9,12 +9,12 @@ class UserService(private val userRepository: UserRepository) {
     fun save(
         title: String,
         email: String,
-    ): User {
-        return userRepository.save(User(
+    ): User = userRepository.save(
+        User(
             title = title,
             email = email,
-        ))
-    }
+        )
+    )
 
     fun getOneById(id: Long) = userRepository.findOneById(id)
 }
