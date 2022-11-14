@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "docker:db:down": "docker-compose -f src/main/docker/mysql.yml down -v",
-    "docker:db:up": "docker-compose -f src/main/docker/mysql.yml up -d"
+    "docker:db:up": "docker-compose -f src/main/docker/mysql.yml up -d",
+    "test": "./ggsradlew test --tests \"*UnitTest\"",
+    "integration-test": "./gradlew test --tests \"*IntegrationTest\""
   },
   "keywords": [],
   "author": "",
