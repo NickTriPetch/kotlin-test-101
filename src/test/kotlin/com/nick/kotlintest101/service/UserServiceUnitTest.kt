@@ -30,21 +30,19 @@ class UserServiceUnitTest {
 
     @Test
     fun `userRepositorySave should be called once`() {
-        Mockito.`when`(mockUserRepository.save(any(User::class.java))).thenReturn(User("No care", "no@care.com"))
+        val tempUser = User("No care", "no@care.com")
+
+        Mockito.`when`(mockUserRepository.save(any(User::class.java))).thenReturn(tempUser)
 
         userService.save(
-            "whatever title",
-            "whatever@email.com",
+            tempUser.title!!,
+            tempUser.email!!,
         )
 
         val userArgumentCaptor: ArgumentCaptor<User> = ArgumentCaptor.forClass(User::class.java)
 
         Mockito.verify(mockUserRepository).save(userArgumentCaptor.capture())
         val capturedUser = userArgumentCaptor.value
-
-        println("============================================")
-        println("> capturedUser")
-        println(ObjectMapper().writeValueAsString(capturedUser))
 
         Mockito.verify(mockUserRepository, Mockito.times(1)).save(capturedUser)
     }
